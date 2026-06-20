@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/usr/bin/env bash
 # WiFi watchdog: bağlantı kopuksa DNS'i yeniler. Cron ile 3 dakikada bir çalıştırılır.
 TIMESTAMP="$(date '+%Y-%m-%d %H:%M:%S')"
 PING_HOST="8.8.8.8"

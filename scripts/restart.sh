@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/usr/bin/env bash
 set -e
 "$(dirname "$0")/stop.sh" || true
 sleep 1

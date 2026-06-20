@@ -1,4 +1,4 @@
-#!/data/data/com.termux/files/usr/bin/bash
+#!/usr/bin/env bash
 # Watchdog: Bot çalışmıyorsa yeniden başlatır. Cron ile 5 dakikada bir çalıştırılır.
 SCRIPT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$SCRIPT_DIR"

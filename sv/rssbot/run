@@ -1,4 +1,3 @@
-#!/data/data/com.termux/files/usr/bin/bash
-cd ~/telegram_rss_pro
-exec .venv/bin/python src/bot.py
+#!/usr/bin/env bash
+cd ~/tr-rss-haber-izleme
 exec .venv/bin/python src/bot.py

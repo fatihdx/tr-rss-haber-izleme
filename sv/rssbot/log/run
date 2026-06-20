@@ -1,2 +1,2 @@
-#!/data/data/com.termux/files/usr/bin/bash
-exec svlogd -tt ~/telegram_rss_pro/logs/sv/
+#!/usr/bin/env bash
+exec svlogd -tt ~/tr-rss-haber-izleme/logs/sv/
