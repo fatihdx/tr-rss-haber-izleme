@@ -2,8 +2,8 @@
 # TELEGRAM RSS BOT - NİHAİ KONFİGÜRASYON 
 # ════════════════════════════════════════════════════════════════
 # Dosya: config.yaml
-# Revize Tarihi: 2025
-# Versiyon: 0.1 
+# Revize Tarihi: 2026
+# Versiyon: 0.1.0
 # ════════════════════════════════════════════════════════════════
 
 # === TELEGRAM AYARLARI ===
@@ -397,9 +397,6 @@ include_keywords:
   # ─────────────────────────────────────────────────────────────
   # Takip etmek istediğiniz önemli dava adlarını buraya ekleyin (örnek):
   # - "ornek dava adi"
-      - "garin nüran"
-      - "azgecan öslan"
-      - "gınar pültekin"
 
 
   # ─────────────────────────────────────────────────────────────
@@ -551,7 +548,7 @@ exclude_keywords:
   - "rafineri"
   
   # ─────────────────────────────────────────────────────────────
-  # EMLİK VE İNŞAAT (YENİ!)
+  # EMLAK VE İNŞAAT
   # ─────────────────────────────────────────────────────────────
   - "emlak"
   - "gayrimenkul"
@@ -893,7 +890,7 @@ disable_link_preview: true
 title_prefix: "📋"
 
 # Alt bilgi metni 
-footer_text: "— (FOOTER MESAJINIZ)"
+footer_text: "— TR-RSS Haber İzleme"
 
 # ════════════════════════════════════════════════════════════════
 # MESAJ FORMATI 
@@ -919,7 +916,7 @@ message_format:
   link_emoji: "🔗"
   
   # Alt bilgi
-  footer: "— (FOOTER MESAJINIZ)"
+  footer: "— TR-RSS Haber İzleme"
 
 # ════════════════════════════════════════════════════════════════
 # KAYIT VE LOGlama
