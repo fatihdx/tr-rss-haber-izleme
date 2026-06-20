@@ -1,10 +1,18 @@
-# 📰 Telegram RSS Haber Botu
+# 📰 TR-RSS · Toplumsal Hassasiyet Odaklı Haber İzleme
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-green.svg)](https://www.python.org/)
 [![Platform](https://img.shields.io/badge/Platform-Termux%20%2F%20Linux-orange.svg)](https://termux.dev/)
 
 Türkçe haber kaynaklarından (RSS) **adli, hukuk ve asayiş** odaklı haberleri çekip, akıllı bir filtreden geçirerek Telegram grup/kanalınıza otomatik gönderen bot. 7/24 bir telefonda (Termux) veya Linux sunucuda çalışacak şekilde tasarlanmıştır.
+
+---
+
+## 🖥️ Çalışırken (Termux)
+
+![Termux başlatma logu](docs/img/termux-baslatma.jpeg)
+
+> Botun bir Android cihazda Termux üzerinde çalışırken alınmış başlatma logu (feed yükleme, keyword sayıları, döngü başlangıcı).
 
 ---
 
@@ -57,8 +65,8 @@ Türkçe haber kaynaklarından (RSS) **adli, hukuk ve asayiş** odaklı haberler
 pkg update && pkg install python sqlite git -y
 
 # 2) Projeyi al
-git clone https://github.com/fatihdx/telegram_rss_pro.git
-cd telegram_rss_pro
+git clone https://github.com/fatihdx/tr-rss-haber-izleme.git
+cd tr-rss-haber-izleme
 
 # 3) Sanal ortam + bağımlılıklar
 python -m venv .venv
@@ -97,7 +105,7 @@ bash scripts/stop.sh        # durdurur
 ```
 
 > ⚠️ `sv/rssbot/run` içindeki çalışma dizini yolu kuruluma göre düzenlenmelidir
-> (varsayılan: `/data/data/com.termux/files/home/telegram_rss_pro`).
+> (varsayılan: `~/tr-rss-haber-izleme`).
 
 ---
 
@@ -106,7 +114,7 @@ bash scripts/stop.sh        # durdurur
 `config.yaml` içindeki üç liste haberin kaderini belirler:
 
 1. **`exclude_keywords`** — bu kelimeleri içeren haber **engellenir** (önce kontrol edilir). Spor, magazin, ekonomi, dış politika, astroloji vb. gürültü.
-2. **`include_keywords`** — sadece bu kelimeleri içeren haber **geçer**. Adli/hukuk/asayiş terimleri + önemli dava ve kişi isimleri.
+2. **`include_keywords`** — sadece bu kelimeleri içeren haber **geçer**. Adli/hukuk/asayiş terimleri ve isteğe bağlı önemli dava adları (konu filtresi; takip/fişleme listesi değildir).
 3. **`clickbait_keywords`** — süreç kelimesiyle birlikte geçerse **önceliklendirilir**.
 
 Geçen haberlere bir **skor** ve **kategori** atanır; eşik altı kalanlar elenir. Tüm kararlar `article_log` tablosuna yazılır (sonradan analiz için).
@@ -223,6 +231,15 @@ FEEDBACK x KATEGORI
 - Eski kayıtlar `cleanup_days` (varsayılan 30) sonrası temizlenir (yalnızca `seen` + `title_fps`).
 
 ---
+
+## ⚖️ Kapsam, Sınırlar & Sorumlu Kullanım
+
+- Bot yalnızca **kamuya açık RSS başlıklarını** izler; özel/kişisel veri toplamaz, bireyleri gözetlemez.
+- **Suç tespiti veya hukuki tayin yapmaz**, kanaat üretmez. Kategoriler kural tabanlı konu etiketidir.
+- `include`/`exclude` listeleri **konu filtresidir, takip/fişleme listesi değildir.**
+- Kaynak teliflerine saygı: yalnızca **başlık + bağlantı** iletilir/saklanır, tam metin değil.
+- Amaç, toplumsal açıdan hassas (adli/asayiş/kamu düzeni) haberleri *derli toplu izlemektir*; infial/dezenformasyon üretmek değildir.
+- Yasal ve etik kullanım sorumluluğu işletici kullanıcıya aittir.
 
 ## 📄 Lisans
 
