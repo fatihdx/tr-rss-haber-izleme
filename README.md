@@ -8,14 +8,6 @@ Türkçe haber kaynaklarından (RSS) **adli, hukuk ve asayiş** odaklı haberler
 
 ---
 
-## 🖥️ Çalışırken (Termux)
-
-![Termux başlatma logu](docs/img/termux-baslatma.jpeg)
-
-> Botun bir Android cihazda Termux üzerinde çalışırken alınmış başlatma logu (feed yükleme, keyword sayıları, döngü başlangıcı).
-
----
-
 ## ✨ Özellikler
 
 - **~23 haber kaynağı** — ana akım, muhalif ve uluslararası Türkçe RSS akışları
