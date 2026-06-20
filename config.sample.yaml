@@ -1,0 +1,957 @@
+# ════════════════════════════════════════════════════════════════
+# TELEGRAM RSS BOT - NİHAİ KONFİGÜRASYON 
+# ════════════════════════════════════════════════════════════════
+# Dosya: config.yaml
+# Revize Tarihi: 2025
+# Versiyon: 0.1 
+# ════════════════════════════════════════════════════════════════
+
+# === TELEGRAM AYARLARI ===
+telegram_token: "YOUR_BOT_TOKEN_HERE"        # BotFather'dan alın (@BotFather -> /newbot)
+chat_ids:
+  - -100XXXXXXXXXX   # Haberlerin gönderileceği grup/kanal ID'si (-100 ile başlar)
+
+# Haftalık raporun gönderileceği yönetici ID'si (kendi Telegram kullanıcı ID'niz)
+admin_chat_id: "YOUR_ADMIN_USER_ID"
+
+# === RSS KAYNAKLARI ===
+feeds:
+  # Ana Akım Haber Kaynakları
+  - "https://www.aa.com.tr/tr/rss/default?cat=guncel"
+  - "https://www.trthaber.com/sondakika.rss"
+  - "https://www.hurriyet.com.tr/rss/anasayfa"
+  - "https://www.cnnturk.com/feed/rss/all/news"
+  - "https://www.ntv.com.tr/gundem.rss"
+  - "https://www.haberturk.com/rss"
+  - "https://www.sabah.com.tr/rss/gundem.xml"
+  - "https://www.ahaber.com.tr/rss/gundem.xml"
+  - "https://www.yenisafak.com/rss?xml=gundem"
+  - "https://www.star.com.tr/rss/rss.asp"
+  
+  # Muhalif ve Alternatif Medya
+  - "https://www.cumhuriyet.com.tr/rss/son_dakika.xml"
+  - "https://www.sozcu.com.tr/feeds-rss-category-sozcu"
+  - "https://www.birgun.net/rss/home"
+  - "https://t24.com.tr/rss"
+  - "https://www.gazeteduvar.com.tr/export/rss"
+  - "https://www.diken.com.tr/feed/"
+  - "https://halktv.com.tr/service/rss.php"
+  - "https://bianet.org/biamag.rss"
+  
+  # Uluslararası Türkçe Kaynaklar
+  - "https://feeds.bbci.co.uk/turkce/rss.xml"
+  - "https://www.indyturk.com/rss.xml"
+  
+  # Bölgesel Kaynaklar
+  - "https://www.ensonhaber.com/rss/ensonhaber.xml"
+  - "https://www.mynet.com/haber/rss/sondakika"
+  - "https://haber.sol.org.tr/rss.xml"
+
+# ════════════════════════════════════════════════════════════════
+# AKILLI FİLTRELEME SİSTEMİ
+# ════════════════════════════════════════════════════════════════
+# ✅ SADECE bu anahtar kelimeleri içeren haberler GEÇER
+# TR küçük/büyük harf ve diakritiklerden bağımsız eşleşir
+# ════════════════════════════════════════════════════════════════
+
+include_keywords:
+  # ─────────────────────────────────────────────────────────────
+  # KOLLUK VE ÖN İŞLEM
+  # ─────────────────────────────────────────────────────────────
+  - "gözaltına alındı"
+  - "gözaltı"
+  - "gözaltına"
+  - "yakalandı"
+  - "yakalama"
+  - "yakalama emri"
+  - "operasyon düzenlendi"
+  - "operasyon"
+  - "polis operasyonu"
+  - "arama yapıldı"
+  - "arama kararı"
+  - "ev baskını"
+  - "şafak baskını"
+  - "el konuldu"
+  - "ifade verdi"
+  - "ifadeye çağırıldı"
+  - "ifade özgürlüğü"
+  - "adliyeye sevk edildi"
+  - "adli kontrol"
+  - "seyahat yasağı"
+
+  # ─────────────────────────────────────────────────────────────
+  # SORUŞTURMA
+  # ─────────────────────────────────────────────────────────────
+  - "soruşturma"
+  - "soruşturma başlatıldı"
+  - "soruşturma izni"
+  - "cumhuriyet savcısı"
+  - "savcı"
+  - "savcılık"
+  - "başsavcılık"
+  - "bilirkişi"
+  - "bilirkişi raporu"
+  - "adli tıp"
+  - "adli tıp kurumu"
+  - "fezleke"
+  - "fezleke hazırlandı"
+  - "delil"
+  - "delil yetersizliği"
+  - "delil karartma"
+  - "tanık"
+  - "tanık dinlendi"
+  - "Cumhuriyet Başsavcılığınca"
+
+  # ─────────────────────────────────────────────────────────────
+  # KOVUŞTURMA AÇILIŞI
+  # ─────────────────────────────────────────────────────────────
+  - "iddianame"
+  - "iddianame hazırlandı"
+  - "iddianame kabul edildi"
+  - "tensip"
+  - "dava"
+  - "dava açıldı"
+  - "dava açmak"
+  - "dava dosyası"
+  - "dava düştü"
+  - "kovuşturma"
+
+  # ─────────────────────────────────────────────────────────────
+  # YARGILAMA
+  # ─────────────────────────────────────────────────────────────
+  - "duruşma"
+  - "duruşma görüldü"
+  - "duruşma ertelendi"
+  - "duruşma tarihi"
+  - "mahkeme"
+  - "mahkeme kararı"
+  - "mahkeme başkanı"
+  - "hakim"
+  - "ağır ceza mahkemesi"
+  - "asliye ceza mahkemesi"
+  - "asliye hukuk mahkemesi"
+  - "aile mahkemesi"
+  - "sulh ceza"
+  - "nöbetçi mahkeme"
+  - "esas hakkında karar"
+  - "mütalaa"
+  - "mütalaa verdi"
+  - "sanık"
+  - "şüpheli"
+  - "müşteki"
+  - "avukat"
+  - "müdafi"
+  - "baro"
+  - "savunma"
+  - "celp"
+
+  # ─────────────────────────────────────────────────────────────
+  # KARAR VE SONUÇ
+  # ─────────────────────────────────────────────────────────────
+  - "tutuklandı"
+  - "tutuklama"
+  - "tutuklama kararı"
+  - "tutuklama talebi"
+  - "tutuklu yargılama"
+  - "tutuksuz yargılama"
+  - "tahliye"
+  - "tahliye edildi"
+  - "şartla tahliye"
+  - "beraat"
+  - "beraat etti"
+  - "mahkum"
+  - "mahkum edildi"
+  - "mahkumiyet"
+  - "mahkumiyet kararı"
+  - "hüküm"
+  - "hükmün açıklanmasının geri bırakılması"
+  - "hagb"
+  - "yargı kararı"
+  - "ceza kararı"
+  - "kesinleşti"
+  - "kesinleşen karar"
+  - "ret kararı"
+
+  # ─────────────────────────────────────────────────────────────
+  # KANUN YOLU VE KESİNLEŞME
+  # ─────────────────────────────────────────────────────────────
+  - "istinaf"
+  - "istinaf mahkemesi"
+  - "istinaf başvurusu"
+  - "temyiz"
+  - "temyize gitti"
+  - "temyiz incelemesi"
+  - "yargıtay"
+  - "yargıtay başsavcılığı"
+  - "yargıtay ceza dairesi"
+  - "yargıtay hukuk dairesi"
+  - "bozma kararı"
+  - "onama kararı"
+  - "itiraz"
+  - "itiraz dilekçesi"
+  - "reddi hakim"
+
+  # ─────────────────────────────────────────────────────────────
+  # İNFAZ VE SONRASI
+  # ─────────────────────────────────────────────────────────────
+  - "ceza"
+  - "ceza aldı"
+  - "ceza verdi"
+  - "ceza infaz"
+  - "ceza infaz kurumu"
+  - "cezaevi"
+  - "hapis"
+  - "hapis cezası"
+  - "hapis cezasına çevrildi"
+  - "müebbet"
+  - "müebbet hapis"
+  - "ağırlaştırılmış müebbet"
+  - "koşullu salıverilme"
+  - "denetimli serbestlik"
+  - "infaz"
+  - "af"
+  - "genel af"
+
+  # ─────────────────────────────────────────────────────────────
+  # GENEL HUKUK TERİMLERİ
+  # ─────────────────────────────────────────────────────────────
+  - "yargı"
+  - "yargı bağımsızlığı"
+  - "yargı paketi"
+  - "yargı reformu"
+  - "adalet"
+  - "adalet bakanlığı"
+  - "adalet bakanı"
+  - "suç"
+  - "suçlama"
+  - "suç duyurusu"
+  - "kanun teklifi"
+  - "kanun tasarısı"
+  - "yasa tasarısı"
+  - "yasak"
+  - "yasal düzenleme"
+  - "yasadışı örgüt"
+  - "anayasa"
+  - "anayasa mahkemesi"
+  - "anayasa değişikliği"
+  - "anayasa ihlali"
+  - "anayasal hak"
+  - "danıştay"
+  - "icra"
+  - "icra mahkemesi"
+  - "icra iflas kanunu"
+  - "icra takibi"
+  - "tebligat"
+  - "hak ihlali"
+  - "insan hakları"
+  - "insan hakları ihlali"
+  - "adil yargılanma hakkı"
+  - "basın özgürlüğü"
+  - "toplanma özgürlüğü"
+  - "hukuk devleti"
+
+  # ─────────────────────────────────────────────────────────────
+  # KURUMLAR
+  # ─────────────────────────────────────────────────────────────
+  - "emniyet"
+  - "emniyet genel müdürlüğü"
+  - "il emniyet müdürlüğü"
+  - "polis"
+  - "polis merkezi"
+  - "karakol"
+  - "jandarma"
+  - "jandarma genel komutanlığı"
+  - "il jandarma komutanlığı"
+  - "mit"
+  - "milli istihbarat teşkilatı"
+  - "hsyk"
+  - "hakimler ve savcılar kurulu"
+  - "hsk"
+  - "yüksek seçim kurulu"
+  - "ysk"
+  - "aihm"
+  - "avrupa insan hakları mahkemesi"
+  - "türkiye barolar birliği"
+  - "tbb"
+  - "cumhuriyet başsavcılığı"
+  - "sulh ceza mahkemesi"
+
+  # ─────────────────────────────────────────────────────────────
+  # CİNAYET VE ŞİDDET
+  # ─────────────────────────────────────────────────────────────
+  - "cinayet"
+  - "cinayet işledi"
+  - "öldürüldü"
+  - "öldürdü"
+  - "öldürmeye teşebbüs"
+  - "vahşice öldürüldü"
+  - "katil"
+  - "katliam"
+  - "aile katliamı"
+  - "kıskançlık cinayeti"
+  - "namus cinayeti"
+  - "töre cinayeti"
+  - "kadın cinayeti"
+  - "kadın cinayetleri"
+  - "seri katil"
+  - "suikast"
+  - "suikast girişimi"
+  - "kurşunlandı"
+  - "bıçaklandı"
+  - "vuruldu"
+  - "yaralama"
+  - "ağır yaralama"
+  - "kasten yaralama"
+  - "kasten öldürme"
+  - "darp"
+  - "darbedildi"
+  - "dayak"
+
+  # ─────────────────────────────────────────────────────────────
+  # KADINA VE ÇOCUĞA YÖNELİK SUÇLAR
+  # ─────────────────────────────────────────────────────────────
+  - "kadına şiddet"
+  - "kadına yönelik şiddet"
+  - "kadın öldürüldü"
+  - "6284"
+  - "6284 sayılı kanun"
+  - "koruma kararı"
+  - "uzaklaştırma kararı"
+  - "tedbir kararı"
+  - "sığınma evi"
+  - "kadın sığınma evi"
+  - "şönim"
+  - "tecavüz"
+  - "tecavüz etti"
+  - "tecavüze uğradı"
+  - "cinsel saldırı"
+  - "cinsel istismar"
+  - "cinsel taciz"
+  - "taciz"
+  - "taciz etti"
+  - "çocuk istismarı"
+  - "çocuğa taciz"
+  - "çocuğa tecavüz"
+  - "çocuk ihmali"
+  - "pedofil"
+  - "pedofili"
+  - "reşit olmayanla cinsel ilişki"
+
+  # ─────────────────────────────────────────────────────────────
+  # ORGANİZE SUÇ VE YOLSUZLUK
+  # ─────────────────────────────────────────────────────────────
+  - "örgüt"
+  - "örgüt lideri"
+  - "örgüt üyeliği"
+  - "suç örgütü"
+  - "çıkar amaçlı suç örgütü"
+  - "silahlı örgüt"
+  - "organize suç"
+  - "çete"
+  - "çete elebaşı"
+  - "mafya"
+  - "mafya lideri"
+  - "rüşvet"
+  - "rüşvet alan"
+  - "rüşvet veren"
+  - "irtikap"
+  - "zimmet"
+  - "zimmetine geçirdi"
+  - "yolsuzluk"
+  - "ihaleye fesat"
+  - "kara para"
+  - "kara para aklama"
+  - "para akladı"
+  - "dolandırıcılık"
+  - "dolandırıcı"
+  - "sahtecilik"
+  - "sahtekarlık"
+  - "evrak sahteciliği"
+  - "resmi belgede sahtecilik"
+  - "güveni kötüye kullanma"
+
+  # ─────────────────────────────────────────────────────────────
+  # TERÖR VE GÜVENLİK
+  # ─────────────────────────────────────────────────────────────
+  - "terör"
+  - "terör örgütü"
+  - "terör saldırısı"
+  - "terör eylemi"
+  - "terör propagandası"
+  - "terörist"
+  - "terörizm"
+  - "bombalı saldırı"
+  - "bomba patladı"
+  - "patlama"
+  - "intihar saldırısı"
+  - "canlı bomba"
+  - "pkk"
+  - "fetö"
+  - "darbe"
+  - "darbe girişimi"
+  - "darbeye teşebbüs"
+  - "15 temmuz"
+
+  # ─────────────────────────────────────────────────────────────
+  # ÖNEMLİ DAVALAR VE KUMPASLAR
+  # ─────────────────────────────────────────────────────────────
+  # Takip etmek istediğiniz önemli dava adlarını buraya ekleyin (örnek):
+  # - "ornek dava adi"
+      - "garin nüran"
+      - "azgecan öslan"
+      - "gınar pültekin"
+
+
+  # ─────────────────────────────────────────────────────────────
+  # ÖNEMLİ KİŞİLER 
+  # ─────────────────────────────────────────────────────────────
+  # Takip etmek istediğin adlarını buraya ekleyin (örnek):
+  # - "ad soyad"
+
+  # ─────────────────────────────────────────────────────────────
+  # GAZETECİ VE MEDYA KİŞİLERİ
+  # ─────────────────────────────────────────────────────────────
+  # Takip etmek istediğiniz gazeteci/medya kişisi adlarını buraya ekleyin (örnek):
+  # - "ad soyad"
+
+  # ─────────────────────────────────────────────────────────────
+  # MEDYA KURULUŞLARI
+  # ─────────────────────────────────────────────────────────────
+  # Takip etmek istediğiniz medya kuruluşu adlarını buraya ekleyin (örnek):
+  # - "kurulus adi"
+
+  # ─────────────────────────────────────────────────────────────
+  # EKONOMİK DOLANDIRICILIK VE VAKALAR
+  # ─────────────────────────────────────────────────────────────
+  # Takip etmek istediğiniz ekonomik dava/dolandırıcılık adlarını buraya ekleyin (örnek):
+  # - "ornek vaka"
+
+  # ─────────────────────────────────────────────────────────────
+  # ÖZEL VAKALAR VE OLAYLAR
+  # ─────────────────────────────────────────────────────────────
+  # Takip etmek istediğiniz özel vaka/olay adlarını buraya ekleyin (örnek):
+  # - "ornek vaka"
+
+  # ─────────────────────────────────────────────────────────────
+  # DEPREM DAVALARI
+  # ─────────────────────────────────────────────────────────────
+  - "deprem davası"
+  - "müteahhit davasında"
+  - "yapı denetim davası"
+
+  # ─────────────────────────────────────────────────────────────
+  # SPORDA ŞİDDET
+  # ─────────────────────────────────────────────────────────────
+  - "hakem saldırı"
+
+# ════════════════════════════════════════════════════════════════
+# CLİCKBAİT DESTEKLEYİCİ KELİMELER
+# ════════════════════════════════════════════════════════════════
+# Süreç kelimesi + clickbait birlikte ise ÖNCELİK verilir
+# ════════════════════════════════════════════════════════════════
+
+clickbait_keywords:
+  - "son dakika"
+  - "flaş"
+  - "şok"
+  - "bomba iddia"
+  - "işte detaylar"
+  - "dikkat çeken"
+  - "çok konuşulan"
+  - "infial yaratan"
+  - "tepki çeken"
+
+# ════════════════════════════════════════════════════════════════
+# HARIÇ TUTULACAK KELİMELER (GÜRÜLTÜ FİLTRESİ) - 
+# ════════════════════════════════════════════════════════════════
+# ❌ Bu kelimeleri içeren haberler ENGELLENİR
+# ÖNCE EXCLUDE KONTROL EDİLİR!
+# ════════════════════════════════════════════════════════════════
+
+exclude_keywords:
+  # ─────────────────────────────────────────────────────────────
+  # TRAFİK VE ULAŞIM
+  # ─────────────────────────────────────────────────────────────
+  - "trafik"
+  - "trafik yoğunluğu"
+  - "yoğunluk yüzde"
+  - "araç kuyrukları"
+  - "trafik kilitlendi"
+  - "yollar kilitlendi"
+  - "trafik durdu"
+  - "trafik haritası"
+  - "mesai çıkışı"
+  - "mesai bitişi"
+  - "plaka"
+  - "plakada ceza"
+  - "app plaka"
+  - "ceza rehberi"
+  - "ehliyet"
+  - "sürücü belgesi"
+  - "araç muayene"
+  - "idari para cezası"
+  
+  # ─────────────────────────────────────────────────────────────
+  # DOĞAL AFET VE HAVA DURUMU (YENİ!)
+  # ─────────────────────────────────────────────────────────────
+  - "sel"
+  - "sel vurdu"
+  - "yağış"
+  - "yağmur"
+  - "yağmur bastırdı"
+  - "meteoroloji"
+  - "hava durumu"
+  - "sıcaklık"
+  - "deprem" # SADECE "deprem davası" geçmeli
+  - "vietnam"
+  - "avustralya"
+  
+  # ─────────────────────────────────────────────────────────────
+  # EĞİTİM VE SINAV
+  # ─────────────────────────────────────────────────────────────
+  - "aöl"
+  - "açık öğretim"
+  - "sınav yerleri"
+  - "sınav giriş belgesi"
+  - "sınav yeri açıklandı"
+  - "sınav sistemi"
+  - "meb"
+  - "milli eğitim bakanlığı"
+  - "milli eğitim bakanı"
+  - "lgs"
+  - "yks"
+  - "kpss" # SADECE "kpss ana davası" geçmeli
+  - "ösym"
+  - "maarif modeli"
+  
+  # ─────────────────────────────────────────────────────────────
+  # EKONOMİ VE FİNANS
+  # ─────────────────────────────────────────────────────────────
+  - "mevduat"
+  - "faiz"
+  - "faiz oranları"
+  - "vadeli mevduat"
+  - "getirisi"
+  - "kazanç"
+  - "merkez bankası"
+  - "borsa"
+  - "dolar"
+  - "euro"
+  - "altın"
+  - "kripto"
+  - "bitcoin"
+  - "zam"
+  - "zamlandı"
+  - "fiyat artışı"
+  - "ekmek fiyat"
+  - "LPG"
+  - "motorin"
+  - "benzin"
+  - "akaryakıt"
+  - "rafineri"
+  
+  # ─────────────────────────────────────────────────────────────
+  # EMLİK VE İNŞAAT (YENİ!)
+  # ─────────────────────────────────────────────────────────────
+  - "emlak"
+  - "gayrimenkul"
+  - "gayrimenkul piyasası"
+  - "konut"
+  - "konut satış"
+  - "konut kredisi"
+  - "konut desteği"
+  - "faiz desteği"
+  - "emlak pazarlama"
+  - "proje geliştiricileri"
+  
+  # ─────────────────────────────────────────────────────────────
+  # ENERJİ, ALTYAPI VE TEKNOLOJİ
+  # ─────────────────────────────────────────────────────────────
+  - "elektrik"
+  - "elektrik bedava"
+  - "güneş elektriği"
+  - "elektrik ücreti"
+  - "5G"
+  - "robotaksi"
+  - "yapay zeka"
+  
+  # ─────────────────────────────────────────────────────────────
+  # MAGAZİN VE EĞLENCE
+  # ─────────────────────────────────────────────────────────────
+  - "magazin"
+  - "dizi"
+  - "dizisi"
+  - "film"
+  - "filmi"
+  - "sinema"
+  - "vizyona"
+  - "vizyonda"
+  - "tv"
+  - "televizyon"
+  - "program"
+  - "programı"
+  - "yarışma"
+  - "yarışmacı"
+  - "şov"
+  - "show"
+  - "sahne"
+  - "konser"
+  - "konseri"
+  - "müzik"
+  - "şarkı"
+  - "şarkısı"
+  - "albüm"
+  - "klip"
+  - "klibi"
+  - "netflix"
+  - "blu tv"
+  - "exxen"
+  - "disney+"
+  - "spotify"
+  - "sezon finali"
+  - "fragman"
+  - "gala"
+  - "prömiyeri"
+
+  # ─────────────────────────────────────────────────────────────
+  # ÜNLÜLER VE KİŞİSEL HAYAT
+  # ─────────────────────────────────────────────────────────────
+  - "star"
+  - "yıldız"
+  - "celebrity"
+  - "aşk"
+  - "aşık"
+  - "düğün"
+  - "evlilik"
+  - "evlendi"
+  - "balayı"
+  - "doğurdu"
+  - "anne oldu"
+  - "baba oldu"
+  - "birlikte görüntülendi"
+  - "beğeni"
+  - "objektiflere takıldı"
+  - "kıyafeti"
+  - "stili"
+  - "makyajı"
+  - "tatil"
+  - "tatilde"
+  - "eğlendi"
+  
+  # ─────────────────────────────────────────────────────────────
+  # DIŞ POLİTİKA VE ULUSLARARASI
+  # ─────────────────────────────────────────────────────────────
+  - "amerika"
+  - "ABD"
+  - "suriye"
+  - "rusya"
+  - "ukrayna"
+  - "yunanistan"
+  - "trump"
+  - "putin"
+  - "hamas"
+  - "mevkidaşı"
+  - "bulgaristan"
+  - "iran"
+  - "filistin"
+  - "palestine"
+  - "ırak"
+  - "mısır"
+  - "sınırötesi"
+  - "azerbaycan"
+  - "ermenistan"
+  - "kıbrıs"
+  - "KKTC"
+  - "israil"
+  - "ortadoğu"
+  - "danimarka"
+  - "norveç"
+  - "isveç"
+  - "finlandiya"
+  - "almanya"
+  - "fransa"
+  - "ingiltere"
+  - "italya"
+  - "ispanya"
+  - "japonya"
+  - "çin"
+  - "hindistan"
+  - "kanada"
+  - "avusturya"
+  - "hollanda"
+  - "polonya"
+  - "lübnan"
+  - "prenses"
+  - "prens"
+  - "kraliçe"
+  - "kral"
+  - "birleşik krallık"
+  - "gürcistan"
+  - "kosova"
+  - "suudi arabistan"
+  - "kuveyt"
+  - "nepal"
+  - "pakistan"
+  - "afganistan"
+  - "katar"
+  - "bahreyn"
+  - "ürdün"
+  - "tunus"
+  - "libya"
+  - "somali"
+  - "yemen"
+  - "cezayir"
+  - "fas"
+  - "sırbistan"
+  - "hırvatistan"
+  - "bosna"
+  - "makedonya"
+  - "arnavutluk"
+  - "romanya"
+  - "macaristan"
+  - "çekya"
+  - "belçika"
+  - "portekiz"
+  - "güney kore"
+  - "kuzey kore"
+  - "tayvan"
+  - "endonezya"
+  - "malezya"
+  - "tayland"
+  - "brezilya"
+  - "arjantin"
+  - "meksika"
+  - "küba"
+  - "venezuela"
+  - "kolombiya"
+  - "nijerya"
+  - "kenya"
+  - "etiyopya"
+  - "güney afrika"
+  
+  # ─────────────────────────────────────────────────────────────
+  # SAVUNMA SANAYİİ VE ASKERİ
+  # ─────────────────────────────────────────────────────────────
+  - "savunma sanayii"
+  - "savunma sanayi"
+  - "milli savunma bakanlığı"
+  - "milli savunma bakanı"
+  - "bedelli askerlik"
+  - "yoklama kaçağı"
+  - "füze"
+  - "İHA"
+  - "SİHA"
+  - "drone"
+  - "F-35"
+  - "F-16"
+  - "savaş uçağı"
+  - "harp gemisi"
+  - "tatbikat"
+  - "hava savunma"
+  - "kışla"
+
+  # ─────────────────────────────────────────────────────────────
+  # TARIM, KÜLTÜR VE DİĞER BAKANLIKLAR
+  # ─────────────────────────────────────────────────────────────
+  - "tarım bakanlığı"
+  - "tarım bakanı"
+  - "kültür bakanlığı"
+  - "kültür bakanı"
+  - "turizm"
+  - "müze"
+  - "antik kent"
+  - "mozaik"
+  - "tebrik"
+  - "dünya kupası"
+
+  # ─────────────────────────────────────────────────────────────
+  # SPOR
+  # ─────────────────────────────────────────────────────────────
+  - "maç"
+  - "maçı"
+  - "karşılaşma"
+  - "gol"
+  - "golü"
+  - "hat-trick"
+  - "penaltı"
+  - "korner"
+  - "ofsayt"
+  - "sarı kart"
+  - "kırmızı kart"
+  - "takım"
+  - "takımı"
+  - "galatasaray"
+  - "fenerbahçe"
+  - "beşiktaş"
+  - "trabzonspor"
+  - "transfer"
+  - "transferi"
+  - "bonservis"
+  - "basketbol"
+  - "nba"
+  - "voleybol"
+  - "tenis"
+  - "formula"
+  - "f1"
+  - "şampiyon"
+  - "şampiyonluk"
+  - "kupa"
+  - "lig"
+  - "ligi"
+  - "milli takım"
+  - "antrenör"
+  - "teknik direktör"
+  - "forvet"
+  - "kaleci"
+  - "deplasman"
+  - "stadyum"
+  - "tribün"
+  - "puan"
+  - "derbi"
+  - "olimpiyat"
+  - "madalya"
+
+  # ─────────────────────────────────────────────────────────────
+  # ASTROLOJİ VE PSEUDO-SCIENCE
+  # ─────────────────────────────────────────────────────────────
+  - "burç"
+  - "burcu"
+  - "burcunuz"
+  - "astroloji"
+  - "zodyak"
+  - "yükselen"
+  - "falcı"
+  - "falı"
+  - "medyum"
+  - "kehanet"
+  - "rüya tabiri"
+  - "rüya yorumu"
+
+  # ─────────────────────────────────────────────────────────────
+  # SAĞLIK CLİCKBAİT
+  # ─────────────────────────────────────────────────────────────
+  - "mucize besin"
+  - "şifa"
+  - "şifalı"
+  - "kür"
+  - "doğal kür"
+  - "diyet listesi"
+  - "detoks"
+  - "detox"
+  - "karın eritici"
+  - "yağ yakıcı"
+
+  # ─────────────────────────────────────────────────────────────
+  # YEMEK VE TARİF
+  # ─────────────────────────────────────────────────────────────
+  - "tarif"
+  - "tarifi"
+  - "yemek tarifi"
+  - "pratik tarif"
+  - "nefis tarif"
+  - "nasıl yapılır"
+  - "püf noktası"
+
+  # ─────────────────────────────────────────────────────────────
+  # MODA VE GÜZELLİK
+  # ─────────────────────────────────────────────────────────────
+  - "moda"
+  - "trend"
+  - "stil"
+  - "fashion"
+  - "defile"
+  - "podyum"
+  - "koleksiyon"
+  - "tasarımcı"
+  - "manken"
+  - "güzellik"
+  - "makyaj"
+  - "cilt bakımı"
+  - "saç bakımı"
+  - "estetik"
+
+# ════════════════════════════════════════════════════════════════
+# ÇALIŞMA AYARLARI
+# ════════════════════════════════════════════════════════════════
+
+# Kontrol sıklığı (dakika)
+interval_minutes: 15
+
+# Aktif saat aralığı (Türkiye saati)
+active_hours: "07:00-23:59"
+
+# Zaman dilimi
+tz: "Europe/Istanbul"
+
+# Döngü başına maksimum haber sayısı
+max_per_cycle: 15
+
+# Link önizlemesini devre dışı bırak
+disable_link_preview: true
+
+# Haber başlığı 
+title_prefix: "📋"
+
+# Alt bilgi metni 
+footer_text: "— (FOOTER MESAJINIZ)"
+
+# ════════════════════════════════════════════════════════════════
+# MESAJ FORMATI 
+# ════════════════════════════════════════════════════════════════
+
+message_format:
+  # Format kullanılsın mı? (true = yeni format, false = eski format)
+  enabled: true
+  
+  # Başlık satırı
+  header:
+    emoji_left: "‼️ 📋"
+    text: "HABER LİSTESİ"
+    emoji_right: "📋 ‼️"
+  
+  # Ayırıcı çizgi
+  separator: "───────────────────────────────────"
+  
+  # Haber içeriği
+  bullet: "•"
+  
+  # Link satırı
+  link_emoji: "🔗"
+  
+  # Alt bilgi
+  footer: "— (FOOTER MESAJINIZ)"
+
+# ════════════════════════════════════════════════════════════════
+# KAYIT VE LOGlama
+# ════════════════════════════════════════════════════════════════
+
+# Veritabanı dosyası
+database_path: "state.db"
+
+# Log dosyası
+log_path: "logs/bot.log"
+
+# Maksimum log dosyası boyutu (MB)
+max_log_size_mb: 10
+
+# Log yedek sayısı
+log_backups: 5
+
+# ════════════════════════════════════════════════════════════════
+# v4 GÜVENİLİRLİK AYARLARI
+# ════════════════════════════════════════════════════════════════
+
+# Telegram gönderim tekrar deneme sayısı
+retry_count: 3
+
+# Tekrar denemeler arası bekleme (saniye, deneme numarasıyla çarpılır)
+retry_delay: 2
+
+# Görülen haberleri N günden sonra sil
+cleanup_days: 30
+
+# Her N cycle'da bir sağlık logu yaz
+health_log_interval: 6
+
+# RSS feed çekme zaman aşımı (saniye)
+feed_timeout: 30

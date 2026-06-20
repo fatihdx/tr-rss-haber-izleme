@@ -1,0 +1,15 @@
+# Termux/Linux hedefli: tüm metin dosyaları LF ile saklanır ve checkout edilir.
+* text=auto eol=lf
+
+# Script ve kaynak: kesinlikle LF (CRLF shebang'ı bozar)
+*.sh    text eol=lf
+*.py    text eol=lf
+*.yaml  text eol=lf
+*.yml   text eol=lf
+*.json  text eol=lf
+run     text eol=lf
+
+# İkili dosyalar
+*.jpeg  binary
+*.jpg   binary
+*.png   binary

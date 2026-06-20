@@ -1,0 +1,32 @@
+# ── Gizli yapılandırma 
+config.yaml
+
+# ── Veritabanı (SQLite + WAL) ──
+state.db
+state.db-wal
+state.db-shm
+
+# ── Loglar ──
+logs/
+*.log
+console.out
+
+# ── Python ──
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ── runit çalışma-zamanı dosyaları ──
+sv/*/supervise/
+sv/*/log/supervise/
+sv/*/log/current
+sv/*/log/lock
+sv/*/log/*.s
+
+# ── Süreç / sistem ──
+bot.pid
+bot_pid
+.DS_Store
+Thumbs.db
