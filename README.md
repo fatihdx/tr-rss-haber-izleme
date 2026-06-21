@@ -233,6 +233,12 @@ FEEDBACK x KATEGORI
 - Amaç, toplumsal açıdan hassas (adli/asayiş/kamu düzeni) haberleri *derli toplu izlemektir*; infial/dezenformasyonu YAYILMADAN ÖNLEME AMACI TAŞIR.
 - Yasal ve etik kullanım sorumluluğu işletici kullanıcıya aittir.
 
+## Hugging Face Dataset
+
+Bu proje kapsamında üretilen temizlenmiş veri seti Hugging Face üzerinde yayımlanmıştır:
+https://huggingface.co/datasets/fatihdx/tr-rss-haber-akisi-verisi
+
+
 ## 📄 Lisans
 
 [Apache License 2.0](LICENSE) — bkz. `LICENSE` ve `NOTICE`.
