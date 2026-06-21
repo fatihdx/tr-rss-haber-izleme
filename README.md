@@ -228,9 +228,9 @@ FEEDBACK x KATEGORI
 
 - Bot yalnızca **kamuya açık RSS başlıklarını** izler; özel/kişisel veri toplamaz, bireyleri gözetlemez.
 - **Suç tespiti veya hukuki tayin yapmaz**, kanaat üretmez. Kategoriler kural tabanlı konu etiketidir.
-- `include`/`exclude` listeleri **konu filtresidir, takip/fişleme listesi değildir.**
+- `include`/`exclude` listeleri **konu filtresidir.
 - Kaynak teliflerine saygı: yalnızca **başlık + bağlantı** iletilir/saklanır, tam metin değil.
-- Amaç, toplumsal açıdan hassas (adli/asayiş/kamu düzeni) haberleri *derli toplu izlemektir*; infial/dezenformasyon üretmek değildir.
+- Amaç, toplumsal açıdan hassas (adli/asayiş/kamu düzeni) haberleri *derli toplu izlemektir*; infial/dezenformasyonU YAYILMADAN ÖNLEME AMACI TAŞIR.
 - Yasal ve etik kullanım sorumluluğu işletici kullanıcıya aittir.
 
 ## 📄 Lisans
